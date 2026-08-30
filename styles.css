@@ -189,6 +189,7 @@ img {
   width: 100%;
   aspect-ratio: 1;
   object-fit: cover;
+  object-position: center 20%;
   border-radius: 44% 44% 47% 47% / 34% 34% 53% 53%;
 }
 
