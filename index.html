@@ -4,11 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="format-detection" content="telephone=no" />
-    <meta name="build-version" content="2026-08-30-story-2" />
+    <meta name="build-version" content="2026-08-30-architecture-3" />
     <meta name="theme-color" content="#102a4c" />
     <meta
       name="description"
-      content="王建（HiveWang）的个人主页 — 华智AI具身智能数据服务负责人，专注真实场景数据、数据治理与全栈系统工程。"
+      content="王建（HiveWang）的个人主页 — 关注复杂系统、真实场景数据、数据治理与具身智能。"
     />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="王建 · Embodied Intelligence &amp; Data Science" />
@@ -29,7 +29,7 @@
     <meta name="twitter:image" content="https://hivewang.github.io/og.png" />
     <link rel="canonical" href="https://hivewang.github.io/" />
     <link rel="icon" href="favicon.svg?v=20260830-profile-1" type="image/svg+xml" />
-    <link rel="stylesheet" href="styles.css?v=20260830-story-2" />
+    <link rel="stylesheet" href="styles.css?v=20260830-architecture-3" />
     <title>王建 · Embodied Intelligence &amp; Data Science</title>
   </head>
   <body>
@@ -45,6 +45,7 @@
         <a href="#home">Home</a>
         <a href="#journey">Journey</a>
         <a href="#work">Work</a>
+        <a href="#architecture">Architecture</a>
         <a href="#research">Research</a>
         <a href="#education">Education</a>
         <a href="#contact">Contact</a>
@@ -69,7 +70,7 @@
           <p class="eyebrow">Systems · Data · AI</p>
           <h1>王建</h1>
           <p class="handle">@HiveWang</p>
-          <p class="role">具身智能数据服务负责人<small>Embodied Intelligence Data Services Lead · 华智AI</small></p>
+          <p class="role">复杂系统 · 数据基础设施 · 具身智能<small>Systems · Data Infrastructure · Embodied Intelligence</small></p>
         </div>
 
         <div class="profile-links">
@@ -78,9 +79,6 @@
           </a>
           <a href="https://github.com/HiveWang?tab=repositories&amp;type=source" target="_blank" rel="noreferrer">
             <span aria-hidden="true">⌘</span> Original repositories
-          </a>
-          <a href="mailto:wangjian@wuxidata.com.cn">
-            <span aria-hidden="true">@</span> Email
           </a>
         </div>
 
@@ -165,21 +163,19 @@
           <article class="now-card">
             <header class="now-header">
               <div>
-                <p class="now-label">Current role</p>
-                <h3>具身智能数据服务负责人</h3>
-                <p class="now-company">华智（无锡）人工智能科技有限公司 · HUAZHI AI</p>
+                <p class="now-label">Technical focus</p>
+                <h3>真实场景数据与具身智能系统</h3>
               </div>
-              <span class="now-status">Current</span>
             </header>
 
             <p class="now-intro">
-              负责真实场景任务定义、数据采集、治理、质量与交付闭环，让原始记录转化为可训练、可治理、可持续回流模型的数据资产。
+              关注真实场景任务定义、数据采集、治理、质量与评测闭环，让原始记录转化为可训练、可追溯、可持续改进的数据基础。
             </p>
             <blockquote class="now-quote">“不在纸面定义标准，在真实场景里磨出标准。”</blockquote>
 
             <div class="now-grid">
               <div>
-                <h4>工作范围 · Scope</h4>
+                <h4>问题空间 · Problem space</h4>
                 <ul>
                   <li>真实场景任务与多模态采集设计</li>
                   <li>数据治理、质量评估与可追溯交付</li>
@@ -187,8 +183,8 @@
                 </ul>
               </div>
               <div>
-                <h4>规模化实践 · Initiative</h4>
-                <p>围绕“千企、百万小时”的规模目标，推动具身智能高质量数据集联合行动、数据治理平台建设与产业数据服务落地。</p>
+                <h4>工程方法 · Engineering method</h4>
+                <p>从任务定义与采集开始，建立质量、血缘、版本与评测机制；再把模型失败转化为下一轮数据改进任务。</p>
               </div>
             </div>
           </article>
@@ -213,6 +209,116 @@
               <div class="tag-list"><span>Evaluation</span><span>Feedback loop</span><span>Iteration</span></div>
             </article>
           </div>
+        </section>
+
+        <section id="architecture" class="section-block architecture-section">
+          <div class="section-heading architecture-heading">
+            <p class="section-kicker">Architecture notes</p>
+            <h2>从观测到行动：VLA 与 WAM 的两种建模路径。</h2>
+            <p>以下是基于公开论文的功能抽象，用于说明关键信息流，不对应某个单一模型的完整实现。</p>
+          </div>
+
+          <figure class="architecture-figure" aria-labelledby="vla-figure-title">
+            <div class="figure-header">
+              <div>
+                <p class="figure-number">Figure 01 · Conceptual synthesis</p>
+                <h3 id="vla-figure-title">A General VLA Inference Stack</h3>
+              </div>
+              <p class="figure-equation">y<sub>t</sub> ∼ π<sub>θ</sub>(· | I<sub>t</sub>, q<sub>t</sub>, ℓ),&nbsp; y<sub>t</sub> ∈ {a<sub>t</sub>, A<sub>t:t+H</sub>}</p>
+            </div>
+
+            <div class="architecture-flow" aria-label="VLA 推理架构：观测与意图经多模态主干和动作生成模块转换为机器人动作，并通过新观测闭环运行">
+              <div class="architecture-node input-node">
+                <span class="node-index">01</span>
+                <h4>观测与意图</h4>
+                <small>Observation &amp; intent</small>
+                <p>Camera image(s) I<sub>t</sub><br />Instruction ℓ<br />Optional state q<sub>t</sub></p>
+              </div>
+              <span class="flow-arrow" aria-hidden="true">→</span>
+              <div class="architecture-node model-node">
+                <span class="node-index">02</span>
+                <h4>多模态主干</h4>
+                <small>Multimodal backbone</small>
+                <p>Visual encoding<br />Language grounding<br />Cross-modal reasoning</p>
+              </div>
+              <span class="flow-arrow" aria-hidden="true">→</span>
+              <div class="architecture-node action-node">
+                <span class="node-index">03</span>
+                <h4>动作生成</h4>
+                <small>Action generation</small>
+                <div class="method-pair route-alternatives">
+                  <span><b>Action tokens</b><small>Discrete autoregressive<br />Detokenize → a<sub>t</sub></small></span>
+                  <em class="route-or">OR</em>
+                  <span><b>Action expert</b><small>Flow matching<br />Integrate → A<sub>t:t+H</sub></small></span>
+                </div>
+              </div>
+              <span class="flow-arrow" aria-hidden="true">→</span>
+              <div class="architecture-node output-node">
+                <span class="node-index">04</span>
+                <h4>动作接口与机器人</h4>
+                <small>Action interface &amp; robot</small>
+                <p>Route-specific decoding<br />Execute a<sub>t</sub> or A<sub>t:t+H</sub><br />Observe o<sub>t+1</sub></p>
+              </div>
+            </div>
+
+            <p class="feedback-band"><span aria-hidden="true">↺</span> Inference-time feedback · 执行后以新观测重新条件化（非在线参数更新）</p>
+            <figcaption>
+              <strong>Figure 01.</strong> VLA 将当前视觉观测、语言意图及可选机器人状态映射为可执行动作。离散动作 token 与连续动作专家是不同实现路线，并非同一模型中的串行步骤。
+              <span class="figure-sources">Informed by <a href="https://robotics-transformer2.github.io/" target="_blank" rel="noreferrer">RT-2</a>, <a href="https://openvla.github.io/" target="_blank" rel="noreferrer">OpenVLA</a>, and <a href="https://www.physicalintelligence.company/download/pi0.pdf" target="_blank" rel="noreferrer">π₀</a>.</span>
+            </figcaption>
+          </figure>
+
+          <figure class="architecture-figure" aria-labelledby="wam-figure-title">
+            <div class="figure-header">
+              <div>
+                <p class="figure-number">Figure 02 · Conceptual synthesis</p>
+                <h3 id="wam-figure-title">A General Closed-loop World Action Model</h3>
+              </div>
+              <p class="figure-equation">p(future, action | observation, goal)</p>
+            </div>
+
+            <div class="architecture-flow" aria-label="WAM 闭环架构：当前世界证据进入世界与动作耦合模型，生成未来状态和动作假设，执行后重新观测与规划">
+              <div class="architecture-node input-node">
+                <span class="node-index">01</span>
+                <h4>当前世界证据</h4>
+                <small>Current world evidence</small>
+                <p>Observation o<sub>t</sub><br />Goal ℓ<br />Optional history h<sub>t</sub></p>
+              </div>
+              <span class="flow-arrow" aria-hidden="true">→</span>
+              <div class="architecture-node model-node">
+                <span class="node-index">02</span>
+                <h4>世界—动作耦合</h4>
+                <small>World–action coupling</small>
+                <div class="method-pair route-alternatives">
+                  <span><b>Cascaded</b><small>o&#770; ∼ p<sub>φ</sub>(· | o, ℓ)<br />A ∼ π<sub>θ</sub>(· | o, o&#770;, ℓ)</small></span>
+                  <em class="route-or">OR</em>
+                  <span><b>Joint</b><small>(o&#770;, A) ∼ p<sub>ψ</sub>(· | o, ℓ)<br />Jointly modeled / generated</small></span>
+                </div>
+              </div>
+              <span class="flow-arrow" aria-hidden="true">→</span>
+              <div class="architecture-node prediction-node">
+                <span class="node-index">03</span>
+                <h4>未来—动作假设</h4>
+                <small>Future–action hypotheses</small>
+                <p>Predicted observations<br />Latent states / trajectories<br />Candidate actions</p>
+              </div>
+              <span class="flow-arrow" aria-hidden="true">→</span>
+              <div class="architecture-node output-node">
+                <span class="node-index">04</span>
+                <h4>执行与滚动重规划</h4>
+                <small>Execute &amp; replan</small>
+                <p>Ground constraints<br />Execute first chunk<br />Observe o<sub>t+1</sub></p>
+              </div>
+            </div>
+
+            <p class="feedback-band"><span aria-hidden="true">↺</span> Receding-horizon inference · 执行后以新观测重新条件化并滚动重规划（模型参数不在此闭环中更新）</p>
+            <figcaption>
+              <strong>Figure 02.</strong> WAM 将未来状态预测与动作生成耦合，并在获得真实新观测后滚动重规划。Cascaded 与 Joint 是两类替代结构：前者先预测未来再生成动作，后者联合建模或生成未来与动作。
+              <span class="figure-sources">Informed by the <a href="https://arxiv.org/abs/2605.12090" target="_blank" rel="noreferrer">WAM survey</a> and <a href="https://arxiv.org/abs/2607.00836" target="_blank" rel="noreferrer">world-model tutorial</a>.</span>
+            </figcaption>
+          </figure>
+
+          <p class="architecture-note"><strong>Scope note.</strong> WAM 仍是快速演化中的研究范式；不同工作对预测分支是否保留在推理阶段采用不同定义。</p>
         </section>
 
         <section id="research" class="section-block">
@@ -325,7 +431,7 @@
           <p>If you work on embodied intelligence, real-world data, or systems engineering, I’d be glad to compare notes.</p>
           <div class="contact-actions">
             <a class="button primary" href="https://github.com/HiveWang" target="_blank" rel="noreferrer">Visit @HiveWang on GitHub ↗</a>
-            <a class="button contact-email" href="mailto:wangjian@wuxidata.com.cn">wangjian@wuxidata.com.cn</a>
+            <a class="button contact-secondary" href="#architecture">Review architecture notes ↑</a>
           </div>
         </section>
 
